@@ -1,5 +1,5 @@
 import dash
-from dash import html, dcc
+from dash import html, dcc, dash_table
 from dash import html, dcc, callback, Input, Output
 from dash.dependencies import State
 import pandas as pd
@@ -59,19 +59,7 @@ data = readTable(query)
 dash.register_page(__name__)
 
 layout = layout = html.Div([
-    dbc.Card(
-        dbc.CardBody([
-            dbc.Row([
-                dbc.Col([
-                    html.Img(src=dash.get_asset_url('Cial_D_B_Logo.png'), style={'width':'90%'})  
-                ], width=3, id='c1'),
-                dbc.Col([
-                    html.Div(
-                        html.H2( id='main_header', children='DATA QUALITY - COMPLETENESS'),
-                        ),
-                ], width=6, id='card'),
-            ], id='maenu_bar')])
-        ),
+    html.H2(id='page_title', children='Data Quality Monitor'),
     html.Div([
     dcc.Dropdown(data.year.unique(),id = 'year', placeholder='Year...', className='dd2'),
     dcc.Dropdown(data.week.unique(),id = 'week', placeholder='Week...', className='dd2'),
@@ -171,7 +159,7 @@ def get_dd2_content(year, week, countryName, universeDesc, n_clicks):
         for item in sections:
 
             group_data = filtered_data.query(f'desc == "{item}"')
-            values=group_data[['dataElement','rowsPopulated','rowsNonPopulated']]
+            values=group_data[['dataElement','rowsPopulated','rowsNonPopulated','rowsPopulatedPct','rowsNonPopulatedPct']]
             
             for row in values.itertuples():
                 names =['Non populated', 'Populated']
@@ -208,6 +196,10 @@ def get_dd2_content(year, week, countryName, universeDesc, n_clicks):
                 dbc_card  = dbc.Card([
                             dbc.CardHeader(html.Font(row.dataElement, className='card_title')),
                             dbc.CardBody([dcc.Graph(figure=fig, className='pie'),
+                            # html.Div(children=[
+                            #    dash_table.DataTable(row.to_dict('records'), [{"rowsPopulatedPct": i, "rowsNonPopulatedPct": i} for i in row.columns])
+
+                            # ], id='card_content')
                             ]),
                             ],id=f'{row.dataElement}', className='card3')
             

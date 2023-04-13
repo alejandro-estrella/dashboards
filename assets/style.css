@@ -1,41 +1,52 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap');
+
 html, body {
     width:100%;
     height:100%;
+    font-family: Montserrat;
 }
 
 .dd{
     margin: 12px; 
     display: block;
     width: 250px;
+    font-size: x-large;
+    font-weight: bold;
 }
 
 .dd2{
     margin: 12px; 
     display: block;
     width: 130px;
+    font-size: large;
+    font-weight: bold;
 }
 
 .dd3{
-    margin: 12px; 
-    display: block;
-    width: 230px;
+    font-size: x-large;
+    font-weight: bold;
 }
+
 
 #page_title{
     width:100%;
     display:flex;
     align-items:center;
     justify-content:center;
+    font-weight: bold;
 }
 
 #SQL-output2{
     width: 99%;
     height: 100%;
-}
+}       
 
-#main_div{
-    width:100%;
-    height:600px;
+
+#c2{
+    text-align: center;
+}
+#c3{
+    width: 65%;
 }
 
 #options{
@@ -100,3 +111,315 @@ html, body {
 .list_text{
     font-size: 25px;
 } 
+
+#data_quality_button {
+    margin: 12px; 
+    display: inline-block;
+    display: block;
+    white-space: nowrap;
+}
+
+#cherished_button {
+    margin: 12px; 
+    display: inline-block;
+    display: block;
+    white-space: nowrap;
+}
+
+#main_header{
+    width:100%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    color:#21ACDA;
+    margin-top: 10px;
+    font-size: 3em;
+    font-weight: bold;
+}
+
+#main{
+    height: 62em;
+    width: 142em;
+}
+
+.general-spinner{
+    display: inline-block;
+    align-self: center;
+    color: rgb(6, 249, 6);
+    font-weight: bold;
+}
+
+#loading-1{
+    display: inline-block;
+    align-self: center;  
+    border: 1px solid black;
+}
+
+/* div{
+    border: 1px solid black;
+    border-radius: 5px;
+} */
+
+#grid-output{
+    display: grid;
+    grid-template-columns: 4% 6% 6% 16% 12% 12% 12% 12% 12%;
+    gap: 1%;
+    grid-template-rows: 7% 29% 29% 29% ;
+    margin: 1%;
+    height:53em;
+    width:140em;
+    display: grid;
+}
+
+.grid_title_1 {
+    grid-column: 1 / 1;
+    grid-row: 1;
+    text-align: center;
+    height: 99%;
+    border: 1px solid black;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+.grid_title_2 {
+    grid-column: 2 / 4;
+    grid-row: 1;
+    text-align: center;
+    height: 99%;
+    border: 1px solid black;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+.grid_title_3 {
+    grid-column: 4 / 4;
+    grid-row: 1;
+    text-align: center;
+    height: 99%;
+    border: 1px solid black;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+.grid_title_4 {
+    grid-column: 5 / 10;
+    grid-row: 1;
+    text-align: center;
+    height: 99%;
+    border: 1px solid black;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+.tier_row_1{
+    grid-column: 1 / 1;
+    grid-row: 2;
+    text-align: center;
+    height: 99%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.tier_row_2{
+    grid-column: 1 / 1;
+    grid-row: 3;
+    text-align: center;
+    height: 99%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.tier_row_3{
+    grid-column: 1 / 1;
+    grid-row: 4;
+    text-align: center;
+    height: 99%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.tier1_1 {
+    grid-column: 2 / 4;
+    grid-row: 2;
+    height: 99%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+.tier1_2 {
+    grid-column: 4 / 4;
+    grid-row: 2;
+    height: 99%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+.tier1_3 {
+    grid-column: 5 / 10;
+    grid-row: 2;
+    height: 99%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+.tier2_1 {
+    grid-column: 2 / 4;
+    grid-row: 3;
+    height: 99%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+.tier2_2 {
+    grid-column: 4 / 4;
+    grid-row: 3;
+    height: 99%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+.tier2_3 {
+    grid-column: 5 / 10;
+    grid-row: 3;
+    height: 99%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+.tier3_1 {
+    grid-column: 2 / 4;
+    grid-row: 4;
+    height: 99%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+.tier3_2 {
+    grid-column: 4 / 4;
+    grid-row: 4;
+    height: 99%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+.tier3_3 {
+    grid-column: 5 / 10;
+    grid-row: 4;
+    height: 99%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+  }
+
+.title1{
+    font-size: 60px;
+    font-weight: bold;
+}
+
+.title2{
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.number1{
+    font-size: 60px;
+    font-weight: bold;
+    display: table;
+    margin: 0 auto;
+}
+
+#T1,#T2,#T3 {
+    font-size: 60px;
+    font-weight: bold;
+    display: table;
+    margin: 0 auto;   
+}
+
+.grph1{
+    height : 95%;
+    width : 95%;
+}
+
+.csvDiv{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: white;
+}
+
+#tier1Modal{
+    text-align: center;
+    overflow-x: hidden;
+    overflow-y: hidden;
+}
+#tier2Modal{
+    text-align: center;
+    overflow-x: hidden;
+    overflow-y: hidden;
+}
+#tier3Modal{
+    text-align: center;
+    overflow-x: hidden;
+    overflow-y: hidden;
+}
+
+#tier4Modal{
+    text-align: center;
+    overflow-x: hidden;
+    overflow-y: hidden;
+}
+
+#tier1Modalb{
+    text-align: center;
+    height:85%;
+    width: 60%;
+    overflow: scroll;
+    display: inline-flex;
+}
+
+#tier2Modalb{
+    text-align: center;
+    height:85%;
+    width: 60%;
+    overflow: scroll;
+    display: inline-flex;
+}
+
+#tier3Modalb{
+    text-align: center;
+    height:85%;
+    width: 60%;
+    overflow: scroll;
+    display: inline-flex;
+}
+
+#tier4Modalb{
+    text-align: center;
+    height:85%;
+    width: 60%;
+    overflow: scroll;
+    display: inline-flex;
+}

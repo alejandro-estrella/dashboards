@@ -14,18 +14,19 @@ app.layout = html.Div([
         dbc.CardBody([
             dbc.Row([
                 dbc.Col([
-
 			        dbc.DropdownMenu(
                         children=[dbc.DropdownMenuItem(page['name'].upper(),href=page["relative_path"])
                         for page in dash.page_registry.values()
                         ],
                         label="Menu",
                         id = "ddmenu",
+                        className='dd3',
+                        style={'font-weight': 'bold'}
                     )
     
                     ], width=1, id='c1'),
                 dbc.Col([
-                    html.Img(src=dash.get_asset_url('Cial_D_B_Logo.png'), style={'width':'90%'})  
+                    html.Img(src=dash.get_asset_url('Cial_D_B_Logo.png'), style={'width':'90%'}, id='logo')  
                 ], width=3, id='c2'),
                 dbc.Col([
                     html.Div(
