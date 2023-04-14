@@ -99,13 +99,13 @@ layout = html.Div(children=[
         dcc.Dropdown(id = 'country-dd', placeholder='Country name...', className='dd', options=[
                 {'label': i, 'value': i} for i in country_list
                 ]),
-        dbc.Button("Run", id="cherished-button", className="dd2", n_clicks=0)
+        dbc.Button("Run", id="cherished-button", className="button1", n_clicks=0)
     ],id='options'),
 	html.Div([
-        html.Div(children=[html.Span(children=[html.Font('TIER', className='title2')])], className='grid_title_1'),
-        html.Div(children=[html.Span(children=[html.Font('DUNS QUANTITY', className='title2')])], className='grid_title_2'),
-        html.Div(children=[html.Span(children=[html.Font('PAST DUE', className='title2')])], className='grid_title_3'),
-        html.Div(children=[html.Span(children=[html.Font('TO BE UPDATED', className='title2')])], className='grid_title_4'),
+        html.Div(children=[html.Span(children=[html.Font('TIER', className='title3')])], className='grid_title_1'),
+        html.Div(children=[html.Span(children=[html.Font('DUNS QUANTITY', className='title3')])], className='grid_title_2'),
+        html.Div(children=[html.Span(children=[html.Font('PAST DUE', className='title3')])], className='grid_title_3'),
+        html.Div(children=[html.Span(children=[html.Font('TO BE UPDATED', className='title3')])], className='grid_title_4'),
         html.Div(children=[html.Span(children=[html.Font('1', className='title1')])], className='tier_row_1'),
         html.Div(children=[html.Span(children=[html.Font('2', className='title1')])], className='tier_row_2'),
         html.Div(children=[html.Span(children=[html.Font('3', className='title1')])], className='tier_row_3'),
@@ -143,14 +143,54 @@ layout = html.Div(children=[
             'yaxis': {'showgrid':False, 'showline':False, 'showticklabels':False, 'zeroline':False},
          }}, config={'displayModeBar': False})], className='tier3_3')
     ],id='grid-output'),
-    html.Div( children=[html.Div( children=[html.Div( children=[], id='modal1_title'),dbc.Button("Close Window", id="Modal1-close", className="me-2", n_clicks=0)],id='tier1Modal1Header'),
-                        html.Div( children=[],id='tier1Modalb'),],id='tier1Modal', className='csvDiv', style={'display':'none'}),
-    html.Div( children=[html.Div( children=[html.Div( children=[], id='modal2_title'),dbc.Button("Close Window", id="Modal2-close", className="me-2", n_clicks=0)],id='tier1Modal2Header'),
-                        html.Div( children=[],id='tier2Modalb'),],id='tier2Modal', className='csvDiv', style={'display':'none'}),
-    html.Div( children=[html.Div( children=[html.Div( children=[], id='modal3_title'),dbc.Button("Close Window", id="Modal3-close", className="me-2", n_clicks=0)],id='tier1Modal3Header'),
-                        html.Div( children=[],id='tier3Modalb'),],id='tier3Modal', className='csvDiv', style={'display':'none'}),
-    html.Div( children=[html.Div( children=[html.Div( children=[], id='modal4_title'),dbc.Button("Close Window", id="Modal4-close", className="me-2", n_clicks=0)],id='tier1Modal4Header'),
-                        html.Div( children=[],id='tier4Modalb'),],id='tier4Modal', className='csvDiv', style={'display':'none'}),
+    html.Div( children=[
+                        html.Div( children=[
+                        html.Div( children=[html.Div( children=[], id='modal1_title'),dbc.Button("Close Window", id="Modal1-close", className="me-2", n_clicks=0),],id='tier1Modal1Header'),
+                        html.Div( children=[],id='tier1Modalb'),
+                        ],
+                        className='csvDiv2'),
+                        ],
+                        id='tier1Modal', className='csvDiv', style={'display':'none'}),
+    html.Div( children=[
+                        html.Div( children=[
+                        html.Div( children=[html.Div( children=[], id='modal2_title'),dbc.Button("Close Window", id="Modal2-close", className="me-2", n_clicks=0)],id='tier1Modal2Header'),
+                        html.Div( children=[],id='tier2Modalb'),
+                        ],
+                        className='csvDiv2'),
+                        ],
+                        id='tier2Modal', className='csvDiv', style={'display':'none'}),
+    html.Div( children=[
+                        html.Div( children=[
+                        html.Div( children=[html.Div( children=[], id='modal3_title'),dbc.Button("Close Window", id="Modal3-close", className="me-2", n_clicks=0)],id='tier1Modal3Header'),
+                        html.Div( children=[],id='tier3Modalb'),
+                        ],
+                        className='csvDiv2'),
+                        ],
+                        id='tier3Modal', className='csvDiv', style={'display':'none'}),
+    html.Div( children=[
+                        html.Div( children=[
+                        html.Div( children=[html.Div( children=[], id='modal4_title'),dbc.Button("Close Window", id="Modal4-close", className="me-2", n_clicks=0)],id='tier1Modal4Header'),
+                        html.Div( children=[],id='tier4Modalb'),
+                        ],
+                        className='csvDiv2'),
+                        ]
+                        ,id='tier4Modal', className='csvDiv', style={'display':'none'}),
+    html.Div( children=[
+                        html.Div( children=[
+                        html.Div( children=[html.Div( children=[], id='modal5_title'),dbc.Button("Close Window", id="Modal5-close", className="me-2", n_clicks=0)],id='tier2Modal5Header'),
+                        html.Div( children=[],id='tier5Modalb'),
+                        ],
+                        className='csvDiv2'),
+                        ]
+                        ,id='tier5Modal', className='csvDiv', style={'display':'none'}),
+    html.Div( children=[
+                        html.Div( children=[
+                        html.Div( children=[html.Div( children=[], id='modal6_title'),dbc.Button("Close Window", id="Modal6-close", className="me-2", n_clicks=0)],id='tier3Modal6Header'),
+                        html.Div( children=[],id='tier6Modalb'),
+                        ],
+                        className='csvDiv2'),
+                        ]
+                        ,id='tier6Modal', className='csvDiv', style={'display':'none'}),
 
     DeferScript(src='/assets/main.js')
 ],id='main'),
@@ -161,6 +201,7 @@ layout = html.Div(children=[
     Output(component_id='tier1Modal', component_property='style'),
     Output(component_id='Modal1-close', component_property='n_clicks'),
     Output(component_id='modal1_title', component_property='children'),
+    Output(component_id='chart2_1', component_property='clickData'),
     State(component_id='country-dd', component_property='value'),
     Input(component_id='chart2_1', component_property='clickData'),
     Input(component_id='Modal1-close', component_property='n_clicks'),
@@ -175,26 +216,29 @@ def display_click_data1(country, clickData,n_clicks):
         output.append({'display': 'none'})
         output.append(0)
         output.append('')
+        output.append(None)
         return  output
     if not clickData:
         raise PreventUpdate
     data = clickData['points']
     pData = data[0]['x']
     period_data = queryByPeriod(1, pData, country )
-    table = dash_table.DataTable(data=period_data.to_dict('records'), columns=[{"Duns_No": i, "abCompanyNam": i,"id": i} for i in period_data.columns], style_cell={'textAlign': 'left','font-size':'16pt', 'border': '1px solid black'}, style_data_conditional=[
+    table = dash_table.DataTable(data=period_data.to_dict('records'), columns=[{"Duns_No": i, "abCompanyNam": i,"id": i} for i in period_data.columns], style_cell={'textAlign': 'left','font-size':'1.5vh', 'border': '1px solid black'}, style_data_conditional=[
         {
             'if': {'row_index': 'odd'},
             'backgroundColor': 'rgb(220, 220, 220)',
         }],
         style_header={
-            'backgroundColor': '#21ACDA',
+            'backgroundColor': 'rgb(18, 169, 219)',
             'fontWeight': 'bold',
-        })
+        },
+         export_format="csv")
     output.append(table)
-    output.append({'display': 'block'})
+    output.append({'display': 'flex'})
     output.append(0)
     title = pData[0].lower() + pData[1:]
-    output.append(html.Font(f'{country} Tier 1 - To be updated in {title}', className='title1'))
+    output.append(html.Font(f'{country} Tier 1 - To be updated in {title}', className='title4'))
+    output.append(None)
     return  output
 
 @callback(
@@ -202,6 +246,7 @@ def display_click_data1(country, clickData,n_clicks):
     Output(component_id='tier2Modal', component_property='style'),
     Output(component_id='Modal2-close', component_property='n_clicks'),
     Output(component_id='modal2_title', component_property='children'),
+    Output(component_id='chart2_2', component_property='clickData'),
     State(component_id='country-dd', component_property='value'),
     Input(component_id='chart2_2', component_property='clickData'),
     Input(component_id='Modal2-close', component_property='n_clicks'),
@@ -216,26 +261,29 @@ def display_click_data2(country, clickData,n_clicks):
         output.append({'display': 'none'})
         output.append(0)
         output.append('')
+        output.append(None)
         return  output
     if not clickData:
         raise PreventUpdate
     data = clickData['points']
     pData = data[0]['x']
     period_data = queryByPeriod(2, pData, country )
-    table = dash_table.DataTable(data=period_data.to_dict('records'), columns=[{"Duns_No": i, "abCompanyNam": i,"id": i} for i in period_data.columns],style_cell={'textAlign': 'left','font-size':'16pt', 'border': '1px solid black'}, style_data_conditional=[
+    table = dash_table.DataTable(data=period_data.to_dict('records'), columns=[{"Duns_No": i, "abCompanyNam": i,"id": i} for i in period_data.columns],style_cell={'textAlign': 'left','font-size':'1.5vh', 'border': '1px solid black'}, style_data_conditional=[
         {
             'if': {'row_index': 'odd'},
             'backgroundColor': 'rgb(220, 220, 220)',
         }],
         style_header={
-            'backgroundColor': '#21ACDA',
+            'backgroundColor': 'rgb(18, 169, 219)',
             'fontWeight': 'bold'
-        })
+        },
+         export_format="csv")
     output.append(table)
-    output.append({'display': 'block'})
+    output.append({'display': 'flex'})
     output.append(0)
     title = pData[0].lower() + pData[1:]
-    output.append(html.Font(f'{country} Tier 2 - To be updated in {title}', className='title1'))
+    output.append(html.Font(f'{country} Tier 2 - To be updated in {title}', className='title4'))
+    output.append(None)
     return  output
 
 @callback(
@@ -243,6 +291,7 @@ def display_click_data2(country, clickData,n_clicks):
     Output(component_id='tier3Modal', component_property='style'),
     Output(component_id='Modal3-close', component_property='n_clicks'),
     Output(component_id='modal3_title', component_property='children'),
+    Output(component_id='chart2_3', component_property='clickData'),
     State(component_id='country-dd', component_property='value'),
     Input(component_id='chart2_3', component_property='clickData'),
     Input(component_id='Modal3-close', component_property='n_clicks'),
@@ -257,26 +306,29 @@ def display_click_data3(country, clickData,n_clicks):
         output.append({'display': 'none'})
         output.append(0)
         output.append('')
+        output.append(None)
         return  output
     if not clickData:
         raise PreventUpdate
     data = clickData['points']
     pData = data[0]['x']
     period_data = queryByPeriod(3, pData, country )
-    table = dash_table.DataTable(data=period_data.to_dict('records'), columns=[{"Duns_No": i, "abCompanyNam": i,"id": i} for i in period_data.columns],style_cell={'textAlign': 'left','font-size':'16pt', 'border': '1px solid black' },style_data_conditional=[
+    table = dash_table.DataTable(data=period_data.to_dict('records'), columns=[{"Duns_No": i, "abCompanyNam": i,"id": i} for i in period_data.columns],style_cell={'textAlign': 'left','font-size':'1.5vh', 'border': '1px solid black' },style_data_conditional=[
         {
             'if': {'row_index': 'odd'},
             'backgroundColor': 'rgb(220, 220, 220)',
         }],
         style_header={
-            'backgroundColor': '#21ACDA',
+            'backgroundColor': 'rgb(18, 169, 219)',
             'fontWeight': 'bold'
-        })
+        },
+         export_format="csv")
     output.append(table)
-    output.append({'display': 'block'})
+    output.append({'display': 'flex'})
     output.append(0)
     title = pData[0].lower() + pData[1:]
-    output.append(html.Font(f'{country} Tier 3 - To be updated in {title}', className='title1'))
+    output.append(html.Font(f'{country} Tier 3 - To be updated in {title}', className='title4'))
+    output.append(None)
     return  output
 
 @callback(
@@ -284,6 +336,7 @@ def display_click_data3(country, clickData,n_clicks):
     Output(component_id='tier4Modal', component_property='style'),
     Output(component_id='Modal4-close', component_property='n_clicks'),
     Output(component_id='modal4_title', component_property='children'),
+    Output(component_id='chart1_1', component_property='clickData'),
     State(component_id='country-dd', component_property='value'),
     Input(component_id='chart1_1', component_property='clickData'),
     Input(component_id='Modal4-close', component_property='n_clicks'),
@@ -298,30 +351,122 @@ def display_click_data4(country, clickData,n_clicks):
         output.append({'display': 'none'})
         output.append(0)
         output.append('')
+        output.append(None)
         return  output
     if not clickData:
         raise PreventUpdate
-    # data = clickData['points']
-    # pData = data[0]['x']
-    # print(data)
     data = clickData['points']
     curve = data[0]['curveNumber']
     if curve == 0:
         return None
     period_data = queryByPeriod(1, 'Past due', country )
-    table = dash_table.DataTable(data=period_data.to_dict('records'), columns=[{"Duns_No": i, "abCompanyNam": i,"id": i} for i in period_data.columns], style_cell={'textAlign': 'left','font-size':'16pt', 'border': '1px solid black'}, style_data_conditional=[
+    table = dash_table.DataTable(data=period_data.to_dict('records'), columns=[{"Duns_No": i, "abCompanyNam": i,"id": i} for i in period_data.columns], style_cell={'textAlign': 'left','font-size':'1.5vh', 'border': '1px solid black'}, style_data_conditional=[
         {
             'if': {'row_index': 'odd'},
             'backgroundColor': 'rgb(220, 220, 220)',
         }],
         style_header={
-            'backgroundColor': '#21ACDA',
+            'backgroundColor': 'rgb(18, 169, 219)',
             'fontWeight': 'bold',
-        })
+        },
+         export_format="csv")
     output.append(table)
-    output.append({'display': 'block'})
+    output.append({'display': 'flex'})
     output.append(0)
-    output.append(html.Font(f'{country} Tier 1 - Past due', className='title1'))
+    output.append(html.Font(f'{country} Tier 1 - Past due', className='title4'))
+    output.append(None)
+    return  output
+
+@callback(
+    Output(component_id='tier5Modalb', component_property='children'),
+    Output(component_id='tier5Modal', component_property='style'),
+    Output(component_id='Modal5-close', component_property='n_clicks'),
+    Output(component_id='modal5_title', component_property='children'),
+    Output(component_id='chart1_2', component_property='clickData'),
+    State(component_id='country-dd', component_property='value'),
+    Input(component_id='chart1_2', component_property='clickData'),
+    Input(component_id='Modal5-close', component_property='n_clicks'),
+    prevent_initial_call=True
+    )
+
+def display_click_data5(country, clickData,n_clicks):
+    output = []
+    if n_clicks > 0:
+        output = []
+        output.append('')
+        output.append({'display': 'none'})
+        output.append(0)
+        output.append('')
+        output.append(None)
+        return  output
+    if not clickData:
+        raise PreventUpdate
+    data = clickData['points']
+    curve = data[0]['curveNumber']
+    if curve == 0:
+        return None
+    period_data = queryByPeriod(2, 'Past due', country )
+    table = dash_table.DataTable(data=period_data.to_dict('records'), columns=[{"Duns_No": i, "abCompanyNam": i,"id": i} for i in period_data.columns], style_cell={'textAlign': 'left','font-size':'1.5vh', 'border': '1px solid black'}, style_data_conditional=[
+        {
+            'if': {'row_index': 'odd'},
+            'backgroundColor': 'rgb(220, 220, 220)',
+        }],
+        style_header={
+            'backgroundColor': 'rgb(18, 169, 219)',
+            'fontWeight': 'bold',
+        },
+         export_format="csv")
+    output.append(table)
+    output.append({'display': 'flex'})
+    output.append(0)
+    output.append(html.Font(f'{country} Tier 2 - Past due', className='title4'))
+    output.append(None)
+    return  output
+
+@callback(
+    Output(component_id='tier6Modalb', component_property='children'),
+    Output(component_id='tier6Modal', component_property='style'),
+    Output(component_id='Modal6-close', component_property='n_clicks'),
+    Output(component_id='modal6_title', component_property='children'),
+    Output(component_id='chart1_3', component_property='clickData'),
+    State(component_id='country-dd', component_property='value'),
+    Input(component_id='chart1_3', component_property='clickData'),
+    Input(component_id='Modal6-close', component_property='n_clicks'),
+    prevent_initial_call=True
+    )
+
+def display_click_data6(country, clickData,n_clicks):
+    output = []
+    if n_clicks > 0:
+        output = []
+        output.append('')
+        output.append({'display': 'none'})
+        output.append(0)
+        output.append('')
+        output.append(None)
+        return  output
+    if not clickData:
+        raise PreventUpdate
+    data = clickData['points']
+    curve = data[0]['curveNumber']
+    if curve == 0:
+        return None
+    period_data = queryByPeriod(3, 'Past due', country )
+    table = dash_table.DataTable(data=period_data.to_dict('records'), columns=[{"Duns_No": i, "abCompanyNam": i,"id": i} for i in period_data.columns], style_cell={'textAlign': 'left','font-size':'1.5vh', 'border': '1px solid black'}, style_data_conditional=[
+        {
+            'if': {'row_index': 'odd'},
+            'backgroundColor': 'rgb(220, 220, 220)',
+        }],
+        style_header={
+            'backgroundColor': 'rgb(18, 169, 219)',
+            'fontWeight': 'bold',
+        },
+         export_format="csv")
+    output.append(table)
+    output.append({'display': 'flex'})
+    output.append(0)
+    output.append(html.Font(f'{country} Tier 3 - Past due', className='title4'))
+    output.append(None)
     return  output
 
 
@@ -449,7 +594,7 @@ def get_tier_data(country, n_clicks):
                     'More than 90 days'],
                 y= bar_data,
                 text = bar_data,
-                textfont=dict(color=['black']),
+                textfont=dict(color='black', size=20),
                 marker=dict(color=['orange','yellow','green','blue','lightgray']),
                 opacity=0.8
                 ))
@@ -473,7 +618,7 @@ def get_tier_data(country, n_clicks):
                 showlegend=False,
                 clickmode='event',
                 font=dict(
-                    size=20 ,
+                    size=14 ,
                     color="black"
                     )
             )

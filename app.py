@@ -21,7 +21,7 @@ app.layout = html.Div([
                         label="Menu",
                         id = "ddmenu",
                         className='dd3',
-                        style={'font-weight': 'bold'}
+                        size="lg",
                     )
     
                     ], width=1, id='c1'),
@@ -36,7 +36,7 @@ app.layout = html.Div([
             ], id='maenu_bar')])
         ),
 	dash.page_container
-])
+], id='layout')
 
 if __name__ == '__main__':
     app.run_server(host=host, port=port, debug=False)
