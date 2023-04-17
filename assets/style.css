@@ -16,6 +16,22 @@ html, body {
     margin-top: 2vh;
 }
 
+.dd2{
+    margin: 12px; 
+    display: block;
+    width: 150px;
+    font-size: 1vw;
+    font-weight: bold;
+}
+
+.dd3{
+    margin: 12px; 
+    display: block;
+    width: 300px;
+    font-size: 1vw;
+    font-weight: bold;
+}
+
 .button1{
     margin: 12px; 
     display: block;
@@ -32,13 +48,6 @@ html, body {
     font-size: large;
 }
 
-.dd3{
-    margin: 12px; 
-    display: block;
-    width: 300px;
-    font-size: 1vw;
-    font-weight: bold;
-}
 
 #page_title{
     width:100%;
@@ -57,9 +66,15 @@ html, body {
 
 #c2{
     text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 #c3{
     width: 65%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 #options{
@@ -73,6 +88,10 @@ html, body {
 .card_title{
     font-size: 9px;
     font-weight: bold;
+}
+
+#logo{
+     margin-left: 20px;   
 }
 
 .card3 {
@@ -130,6 +149,7 @@ html, body {
     display: inline-block;
     display: block;
     white-space: nowrap;
+    font-size: large;
 }
 
 #cherished_button {

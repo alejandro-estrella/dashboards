@@ -99,7 +99,7 @@ layout = html.Div(children=[
         dcc.Dropdown(id = 'country-dd', placeholder='Country name...', className='dd', options=[
                 {'label': i, 'value': i} for i in country_list
                 ]),
-        dbc.Button("Run", id="cherished-button", className="button1", n_clicks=0)
+        dbc.Button("Search", id="cherished-button", className="button1", n_clicks=0)
     ],id='options'),
 	html.Div([
         html.Div(children=[html.Span(children=[html.Font('TIER', className='title3')])], className='grid_title_1'),

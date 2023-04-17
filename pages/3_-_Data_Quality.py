@@ -65,7 +65,7 @@ layout = layout = html.Div([
     dcc.Dropdown(data.week.unique(),id = 'week', placeholder='Week...', className='dd2'),
     dcc.Dropdown(data.countryName.unique(),id = 'countryName', placeholder='country Name...', className='dd2'),
     dcc.Dropdown(data.universeDesc.unique(),id = 'universeDesc', placeholder='Universe...', className='dd3' ),
-    html.Div([dbc.Button("Run", id="data_quality_button", className="me-2", n_clicks=0),]),
+    html.Div([dbc.Button("SEARCH", id="data_quality_button", className="button2", n_clicks=0),]),
     html.Div([dcc.Loading(id="loading-1", children=[html.Div([html.Div(id="loading-output-1")])], type="circle",)],
               id="spinner", className="general-spinner"),
     ],id='options'),
